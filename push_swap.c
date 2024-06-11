@@ -6,19 +6,19 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/11 11:04:04 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:13:43 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_create_stack_a(stack **a, char **argv)
+void	ft_create_stack_a(t_stack **a, char **argv, int argc)
 {
 	int		i;
-	stack	*new_node;
-	
+	t_stack	*new_node;
+
 	i = 1;
-	while (argv[i])
+	while (i <= argc - 1)
 	{
 		new_node = ft_lstnew(argv[i]);
 		ft_lstadd_back(a, new_node);
@@ -26,19 +26,21 @@ void	ft_create_stack_a(stack **a, char **argv)
 	}
 }
 
-int	main(int argc, char  **argv)
+int	main(int argc, char **argv)
 {
-	stack	*a;
-	
+	t_stack	*a;
+	t_stack	*aux;
+
 	if (argc < 2)
 		return (0);
 	a = NULL;
-	ft_create_stack_a(&a, argv);
+	ft_create_stack_a(&a, argv, argc);
 	while (a)
 	{
 		printf("%i\n", a->number);
+		aux = a;
 		a = a->next;
+		free(aux);
 	}
-	free(a);
 	return (0);
 }

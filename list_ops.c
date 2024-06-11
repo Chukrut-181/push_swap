@@ -6,28 +6,28 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:51:11 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/11 11:04:16 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:14:36 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-stack	*ft_lstnew(char *content)
+t_stack	*ft_lstnew(char *content)
 {
-	stack	*new_node;
+	t_stack	*new_node;
 
-	new_node = malloc(sizeof(stack));
+	new_node = malloc(sizeof(t_stack));
 	if (new_node == NULL)
 		return (NULL);
 	new_node->previous = NULL;
-    new_node->number = ft_atoi(content);
+	new_node->number = ft_atoi(content);
 	new_node->next = NULL;
 	return (new_node);
 }
 
-void	ft_lstadd_back(stack **a, stack *new)
+void	ft_lstadd_back(t_stack **a, t_stack *new)
 {
-	stack	*last;
+	t_stack	*last;
 
 	if (new == NULL)
 		return ;
@@ -38,9 +38,10 @@ void	ft_lstadd_back(stack **a, stack *new)
 	}
 	last = ft_lstlast(*a);
 	last->next = new;
+	new->previous = last;
 }
 
-stack	*ft_lstlast(stack *a)
+t_stack	*ft_lstlast(t_stack *a)
 {
 	if (a == NULL)
 		return (NULL);
@@ -48,4 +49,3 @@ stack	*ft_lstlast(stack *a)
 		a = a->next;
 	return (a);
 }
-
