@@ -6,11 +6,18 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/11 15:13:43 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/11 17:47:29 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/* void	ft_sort_stack(t_stack **a)
+{
+	int	value;
+	int	next_value;
+	
+} */
 
 void	ft_create_stack_a(t_stack **a, char **argv, int argc)
 {
@@ -33,8 +40,14 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
+	if (!ft_evaluate_quality(argv))
+	{
+		write(1, "Error\n", 6);
+		return (0);
+	}
 	a = NULL;
 	ft_create_stack_a(&a, argv, argc);
+	//ft_sort_stack(&a);
 	while (a)
 	{
 		printf("%i\n", a->number);

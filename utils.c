@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:54:29 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/10 16:45:49 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/11 17:54:26 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,24 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	return (sign * result);
+}
+
+int	ft_evaluate_quality(char **argv)
+{
+	int		i;
+	int		j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if ((argv[i][j] < '0' && argv[i][j] != '-') || '9' < argv[i][j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
