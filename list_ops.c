@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:51:11 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/11 15:14:36 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:43:17 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_stack	*ft_lstnew(char *content)
 	if (new_node == NULL)
 		return (NULL);
 	new_node->previous = NULL;
-	new_node->number = ft_atoi(content);
+	new_node->number = ft_atoi_eq(content);
 	new_node->next = NULL;
 	return (new_node);
 }

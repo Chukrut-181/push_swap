@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/11 18:06:14 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:43:11 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*ft_lstnew(char *content);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlast(t_stack *lst);
 
-int		ft_atoi(const char *str);
+int		ft_atoi_eq(const char *str);
 int		ft_evaluate_quality(char **argv);
 
 #endif

@@ -6,17 +6,19 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:54:29 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/12 14:16:12 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:43:21 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi_eq(const char *str)
 {
 	long	result;
 	int		sign;
 
+	if (*str == '\0')
+		exit (write(1, "Error\n", 6));
 	result = 0;
 	sign = 1;
 	while (*str == ' ' || (9 <= *str && *str <= 13))
