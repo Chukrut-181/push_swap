@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:51:11 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/13 16:13:10 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/13 17:50:59 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 t_stack	*ft_lstnew(int *content)
 {
 	t_stack	*new_node;
+
 	new_node = malloc(sizeof(t_stack));
 	if (new_node == NULL)
 		return (NULL);

@@ -6,11 +6,17 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/13 16:13:02 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/13 17:37:40 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_exit(void)
+{
+	write(1, "Error\n", 6);
+	exit (0);
+}
 
 void	ft_create_stack_a(t_stack **a, int *num_str, int argc)
 {

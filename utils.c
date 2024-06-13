@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:54:29 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/13 15:54:02 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/13 17:51:36 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_atoi(const char *str)
 {
 	long	result;
 	int		sign;
+
 	if (*str == '\0')
 		ft_exit();
 	result = 0;
@@ -40,6 +41,7 @@ void	ft_evaluate_quality(char **argv)
 {
 	int		i;
 	int		j;
+	int		k;
 
 	i = 1;
 	while (argv[i])
@@ -53,14 +55,15 @@ void	ft_evaluate_quality(char **argv)
 				ft_exit();
 			j++;
 		}
+		k = i + 1;
+		while (argv[i] && argv[k])
+		{
+			if (!ft_strcmp(argv[i], argv[k]))
+				ft_exit();
+			k++;
+		}
 		i++;
 	}
-}
-
-void	ft_exit(void)
-{
-	write(1, "Error\n", 6);
-	exit (0);
 }
 
 int	*ft_convert_to_int(int argc, char **argv)
@@ -68,6 +71,7 @@ int	*ft_convert_to_int(int argc, char **argv)
 	int	*num_str;
 	int	v;
 	int	i;
+
 	num_str = malloc(argc * sizeof(int));
 	if (!num_str)
 		ft_exit();
@@ -85,4 +89,27 @@ int	*ft_convert_to_int(int argc, char **argv)
 	}
 	num_str[argc - 1] = '\0';
 	return (num_str);
+}
+
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	unsigned char	*ucs1;
+	unsigned char	*ucs2;
+
+	ucs1 = (unsigned char *)s1;
+	ucs2 = (unsigned char *)s2;
+	while (*ucs1 == '0')
+		ucs1++;
+	while (*ucs2 == '0')
+		ucs2++;
+	while ((*ucs1 != '\0' || *ucs2 != '\0'))
+	{
+		if (*ucs1 > *ucs2)
+			return (1);
+		if (*ucs1 < *ucs2)
+			return (-1);
+		ucs1++;
+		ucs2++;
+	}
+	return (0);
 }
