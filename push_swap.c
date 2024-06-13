@@ -6,30 +6,21 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/11 17:47:29 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/13 16:13:02 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* void	ft_sort_stack(t_stack **a)
+void	ft_create_stack_a(t_stack **a, int *num_str, int argc)
 {
-	int	value;
-	int	next_value;
-	
-} */
-
-void	ft_create_stack_a(t_stack **a, char **argv, int argc)
-{
-	int		i;
 	t_stack	*new_node;
 
-	i = 1;
-	while (i <= argc - 1)
+	while (--argc > 0)
 	{
-		new_node = ft_lstnew(argv[i]);
+		new_node = ft_lstnew(num_str);
 		ft_lstadd_back(a, new_node);
-		i++;
+		num_str++;
 	}
 }
 
@@ -37,17 +28,15 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*aux;
+	int		*num_str;
 
 	if (argc < 2)
 		return (0);
-	if (!ft_evaluate_quality(argv))
-	{
-		write(1, "Error\n", 6);
-		return (0);
-	}
+	ft_evaluate_quality(argv);
+	num_str = ft_convert_to_int(argc, argv);
 	a = NULL;
-	ft_create_stack_a(&a, argv, argc);
-	//ft_sort_stack(&a);
+	ft_create_stack_a(&a, num_str, argc);
+	free (num_str);
 	while (a)
 	{
 		printf("%i\n", a->number);

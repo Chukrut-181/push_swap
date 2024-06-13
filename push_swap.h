@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/12 14:43:11 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/13 16:12:55 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ typedef struct l_list
 }	t_stack;
 
 int		main(int argc, char **argv);
-void	ft_create_stack_a(t_stack **a, char **argv, int argc);
-t_stack	*ft_lstnew(char *content);
+void	ft_create_stack_a(t_stack **a, int *num_str, int argc);
+t_stack	*ft_lstnew(int *content);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlast(t_stack *lst);
 
-int		ft_atoi_eq(const char *str);
-int		ft_evaluate_quality(char **argv);
+int		ft_atoi(const char *str);
+void	ft_evaluate_quality(char **argv);
+int		*ft_convert_to_int(int argc, char **argv);
+void	ft_exit(void);
 
 #endif
