@@ -6,13 +6,13 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:54:29 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/14 10:00:49 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/14 11:41:03 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	long	result;
 	int		sign;
@@ -68,9 +68,9 @@ void	ft_evaluate_quality(char **argv)
 
 int	*ft_convert_to_int(int argc, char **argv)
 {
-	int	*num_str;
-	int	v;
-	int	i;
+	int		*num_str;
+	long	v;
+	int		i;
 
 	num_str = malloc(argc * sizeof(int));
 	if (!num_str)
@@ -79,7 +79,7 @@ int	*ft_convert_to_int(int argc, char **argv)
 	while (i < argc)
 	{
 		v = ft_atoi(argv[i]);
-		if ((v < 0 && argv[i][0] != '-') || (v > 0 && argv[i][0] == '-'))
+		if (v < -2147483648 || 2147483647 < v)
 		{
 			free(num_str);
 			ft_exit();
