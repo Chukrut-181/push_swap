@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:54:29 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/13 17:51:36 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/14 10:00:49 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,11 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 	ucs1 = (unsigned char *)s1;
 	ucs2 = (unsigned char *)s2;
+	if (*ucs1 == '-' && *ucs2 == '-')
+	{
+		ucs1++;
+		ucs2++;
+	}
 	while (*ucs1 == '0')
 		ucs1++;
 	while (*ucs2 == '0')
