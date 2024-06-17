@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/17 11:33:32 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/17 12:49:42 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	ft_create_stack_a(&a, num_str, argc);
 	free (num_str);
-	ft_r_rotate(&a);
+	ft_swap(&a);
 	while (a)
 	{
 		printf("%i\n", a->number);
