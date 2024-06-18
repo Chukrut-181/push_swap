@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:51:11 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/13 17:50:59 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/18 12:59:24 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,24 @@ void	ft_lstadd_back(t_stack **a, t_stack *new)
 	last = ft_lstlast(*a);
 	last->next = new;
 	new->previous = last;
+}
+
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
+{
+	if (new == NULL)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	else
+	{
+		new->next = *lst;
+		(*lst)->previous = new;
+		new->previous = NULL;
+		*lst = new;
+	}
 }
 
 t_stack	*ft_lstlast(t_stack *a)

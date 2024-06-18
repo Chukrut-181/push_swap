@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_operation.c                                   :+:      :+:    :+:   */
+/*   rot_swap_push.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:35:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/17 11:18:52 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/18 12:47:39 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_swap(t_stack **a)
 {
-	int aux;
+	int	aux;
 
 	aux = (*a)->next->number;
 	(*a)->next->number = (*a)->number;
@@ -45,4 +45,15 @@ void	ft_r_rotate(t_stack **a)
 	last->next = (*a);
 	(*a)-> previous = last;
 	*a = last;
+}
+
+void	ft_push (t_stack **give, t_stack **take)
+{
+	t_stack	*push;
+
+	push = *give;
+	*give = (*give)->next;
+	(*give)->previous->next = NULL;
+	(*give)->previous = NULL;	
+	ft_lstadd_front(take, push);
 }

@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/17 12:49:42 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/18 12:53:49 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_create_stack_a(t_stack **a, int *num_str, int argc)
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
+	t_stack	*b;
 	t_stack	*aux;
 	int		*num_str;
 
@@ -41,14 +42,23 @@ int	main(int argc, char **argv)
 	ft_evaluate_quality(argv);
 	num_str = ft_convert_to_int(argc, argv);
 	a = NULL;
+	b = NULL;
 	ft_create_stack_a(&a, num_str, argc);
 	free (num_str);
-	ft_swap(&a);
+	ft_push(&a, &b);
+	ft_push(&a, &b);
 	while (a)
 	{
-		printf("%i\n", a->number);
+		printf("Stack A: %i\n", a->number);
 		aux = a;
 		a = a->next;
+		free(aux);
+	}
+	while (b)
+	{
+		printf("Stack B: %i\n", b->number);
+		aux = b;
+		b = b->next;
 		free(aux);
 	}
 	return (0);
