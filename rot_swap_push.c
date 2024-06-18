@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:35:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/18 12:47:39 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/18 17:42:54 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ void	ft_push (t_stack **give, t_stack **take)
 
 	push = *give;
 	*give = (*give)->next;
-	(*give)->previous->next = NULL;
-	(*give)->previous = NULL;	
+	if (*give)
+	{
+		(*give)->previous->next = NULL;
+		(*give)->previous = NULL;
+	}
 	ft_lstadd_front(take, push);
 }

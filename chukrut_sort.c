@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 17:34:09 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/18 17:34:44 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/18 17:41:17 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_chukrut_sort(t_stack **a, t_stack **b)
 	i = 0;
 	while (i < 2)
 	{
-		if((*a)->number > (*a)->next->number)
+		if((*a)->next && (*a)->number > (*a)->next->number)
 		{
 			write(1, "sa\n", 3);
 			ft_swap(a);
