@@ -6,11 +6,29 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/18 12:53:49 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/18 17:29:06 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_chukrut_sort(t_stack **a, t_stack **b)
+{
+	int	i;
+
+	i = 0;
+	while (i < 2)
+	{
+		if((*a)->number > (*a)->next->number)
+		{
+			write(1, "sa\n", 3);
+			ft_swap(a);
+		}
+		write(1, "pb\n", 3);
+		ft_push(a, b);
+		i++;
+	}
+}
 
 void	ft_exit(void)
 {
@@ -45,21 +63,31 @@ int	main(int argc, char **argv)
 	b = NULL;
 	ft_create_stack_a(&a, num_str, argc);
 	free (num_str);
-	ft_push(&a, &b);
-	ft_push(&a, &b);
-	while (a)
+	ft_chukrut_sort(&a, &b);
+	while (a || b)
 	{
-		printf("Stack A: %i\n", a->number);
-		aux = a;
-		a = a->next;
-		free(aux);
+		if (a)
+			printf("%i  ", a->number);
+		else
+			printf("  ");
+		if (b)
+			printf("%i\n", b->number);
+		else
+			printf(" \n");
+		if (a)
+		{
+			aux = a;
+			a = a->next;
+			free(aux);
+		}
+		if (b)
+		{
+			aux = b;
+			b = b->next;
+			free (aux);
+		}
 	}
-	while (b)
-	{
-		printf("Stack B: %i\n", b->number);
-		aux = b;
-		b = b->next;
-		free(aux);
-	}
+	printf("-  -\n");
+	printf("A  B\n");
 	return (0);
 }

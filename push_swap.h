@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/18 12:23:53 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/18 16:59:12 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	ft_swap(t_stack **a);
 void	ft_rotate(t_stack **a);
 void	ft_r_rotate(t_stack **a);
 void	ft_push(t_stack **give, t_stack **take);
+void	ft_chukrut_sort(t_stack **a, t_stack **b);
 
 long	ft_atoi(const char *str);
 void	ft_evaluate_quality(char **argv);
