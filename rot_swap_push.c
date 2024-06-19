@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:35:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/18 17:42:54 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/06/19 10:52:16 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_r_rotate(t_stack **a)
 	*a = last;
 }
 
-void	ft_push (t_stack **give, t_stack **take)
+void	ft_push(t_stack **give, t_stack **take)
 {
 	t_stack	*push;
 
