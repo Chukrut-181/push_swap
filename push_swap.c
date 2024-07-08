@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/08 17:49:31 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/08 18:22:07 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int	main(int argc, char **argv)
 	b = NULL;
 	ft_create_stack_a(&a, num_str, argc);
 	free (num_str);
-		while (a || b)
+	printf("lowest is %i\n", find_lowest(&a)->number);
+	while (a || b)
 	{
 		if (a)
 			printf("%i  ", a->number);
