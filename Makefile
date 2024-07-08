@@ -5,7 +5,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = push_swap.c list_ops.c argv_quality_eval.c rot_swap_push.c\
-chukrut_sort.c
 
 OBJS = $(SRCS:.c=.o)
 
