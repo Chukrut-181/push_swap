@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/08 18:16:43 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/10 18:39:48 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_stack	*ft_lstnew(int *content);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlast(t_stack *lst);
+int		stacksize(t_stack *lst);
 void	ft_exit(void);
 void	ft_swap(t_stack **a);
 void	ft_rotate(t_stack **a);
@@ -39,6 +40,12 @@ long	ft_atoi(const char *str);
 void	ft_evaluate_quality(char **argv);
 int		*ft_convert_to_int(int argc, char **argv);
 int		ft_strcmp(const char *s1, const char *s2);
-t_stack	*find_lowest(t_stack **a);
+void	find_optimal(t_stack **a, t_stack **b);
+void	determine_rotation_sequence(t_stack **a, t_stack **b, t_stack *optimal);
+int		rots_in_origin(t_stack **a, int number);
+int		rots_in_dest(t_stack **b, int number);
+void	exec_same_rots(t_stack **a, t_stack **b, int roto, int rotd);
+void	exec_same_r_rots(t_stack **a, t_stack **b, int roto, int rotd);
+void	exec_opposite_rots(t_stack **a, t_stack **b, int roto, int rotd);
 
 #endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_swap_push.c                                    :+:      :+:    :+:   */
+/*   stack_moves.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 10:35:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/19 10:52:16 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/10 17:27:40 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,32 +19,6 @@ void	ft_swap(t_stack **a)
 	aux = (*a)->next->number;
 	(*a)->next->number = (*a)->number;
 	(*a)->number = aux;
-}
-
-void	ft_rotate(t_stack **a)
-{
-	t_stack	*curr_last;
-	t_stack	*to_be_last;
-
-	curr_last = ft_lstlast(*a);
-	to_be_last = (*a);
-	*a = (*a)->next;
-	(*a)->previous = NULL;
-	to_be_last->next = NULL;
-	curr_last->next = to_be_last;
-	to_be_last->previous = curr_last;
-}
-
-void	ft_r_rotate(t_stack **a)
-{
-	t_stack	*last;
-
-	last = ft_lstlast(*a);
-	last->previous->next = NULL;
-	last->previous = NULL;
-	last->next = (*a);
-	(*a)-> previous = last;
-	*a = last;
 }
 
 void	ft_push(t_stack **give, t_stack **take)

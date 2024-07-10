@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_ops.c                                         :+:      :+:    :+:   */
+/*   list_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:51:11 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/18 12:59:24 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/08 19:31:50 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,17 @@ t_stack	*ft_lstlast(t_stack *a)
 	while (a->next != NULL)
 		a = a->next;
 	return (a);
+}
+
+int	stacksize(t_stack *lst)
+{
+	int	stack_size;
+
+	stack_size = 0;
+	while (lst)
+	{
+		stack_size++;
+		lst = lst->next;
+	}
+	return (stack_size);
 }
