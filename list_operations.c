@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:51:11 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/08 19:31:50 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:01:10 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,15 @@ t_stack	*ft_lstlast(t_stack *a)
 
 int	stacksize(t_stack *lst)
 {
-	int	stack_size;
+	int		stack_size;
+	t_stack	*ref;
 
 	stack_size = 0;
-	while (lst)
+	ref = lst;
+	while (ref)
 	{
 		stack_size++;
-		lst = lst->next;
+		ref = ref->next;
 	}
 	return (stack_size);
 }

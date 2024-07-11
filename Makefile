@@ -5,7 +5,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.c list_operations.c argv_quality_eval.c stack_moves.c\
-sort_machine.c rotations.c
+rotations.c
 
 OBJS = $(SRCS:.c=.o)
 
