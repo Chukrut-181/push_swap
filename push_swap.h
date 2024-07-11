@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/11 17:21:53 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/11 18:52:31 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ long	ft_atoi(const char *str);
 void	ft_evaluate_quality(char **argv);
 int		*ft_convert_to_int(int argc, char **argv);
 int		ft_strcmp(const char *s1, const char *s2);
+int		ft_is_ordered(t_stack **a);
 void	exec_same_rots(t_stack **a, t_stack **b, int roto, int rotd);
 void	exec_same_r_rots(t_stack **a, t_stack **b, int roto, int rotd);
 void	exec_opposite_rots(t_stack **a, t_stack **b, int roto, int rotd);

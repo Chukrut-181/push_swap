@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/11 17:59:32 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/11 18:54:23 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,22 @@ void	ft_exit(void)
 {
 	write(1, "Error\n", 6);
 	exit (-1);
+}
+
+int	ft_is_ordered(t_stack **a)
+{
+	t_stack	*ref;
+
+	ref = (*a);
+	while (ref && ref->next && ref->number < ref->next->number)
+	{
+		ref = ref->next;
+	}
+	if (!ref->next)
+	{
+		return (1);
+	}
+	return (0);
 }
 
 void	ft_create_stack_a(t_stack **a, int *num_str, int argc)
@@ -47,6 +63,8 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	ft_create_stack_a(&a, num_str, argc);
+	if (ft_is_ordered(&a))
+		return (0);
 	while (a || b)
 	{
 		if (a)
