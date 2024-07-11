@@ -6,11 +6,24 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/11 18:54:23 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/11 19:07:24 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_free_stack(t_stack **a)
+{
+	t_stack	*aux;
+
+	aux = NULL;
+	while (*a)
+	{
+		aux = (*a);
+		(*a) = (*a)->next;
+		free (aux);
+	}
+}
 
 void	ft_exit(void)
 {
@@ -29,6 +42,7 @@ int	ft_is_ordered(t_stack **a)
 	}
 	if (!ref->next)
 	{
+		ft_free_stack(a);
 		return (1);
 	}
 	return (0);
@@ -38,7 +52,7 @@ void	ft_create_stack_a(t_stack **a, int *num_str, int argc)
 {
 	t_stack	*new_node;
 	int		*aux;
-	
+
 	aux = num_str;
 	while (--argc > 0)
 	{
