@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/11 19:07:49 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/15 17:55:09 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ void	ft_push(t_stack **give, t_stack **take);
 void	exec_same_rots(t_stack **a, t_stack **b, int roto, int rotd);
 void	exec_same_r_rots(t_stack **a, t_stack **b, int roto, int rotd);
 void	exec_opposite_rots(t_stack **a, t_stack **b, int roto, int rotd);
+void	solve_for_two(t_stack **a);
+void	solve_for_three(t_stack **a);
 
 #endif

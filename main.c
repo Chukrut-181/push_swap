@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/11 19:07:24 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/15 17:48:34 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,10 @@ int	main(int argc, char **argv)
 	ft_create_stack_a(&a, num_str, argc);
 	if (ft_is_ordered(&a))
 		return (0);
+	if (argc == 3)
+		solve_for_two(&a);
+	if (argc == 4)
+		solve_for_three(&a);
 	while (a || b)
 	{
 		if (a)
