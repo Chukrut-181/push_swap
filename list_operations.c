@@ -6,17 +6,17 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:51:11 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/11 17:01:10 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/29 11:46:00 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_lstnew(int *content)
+t_stack_node	*ft_lstnew(int *content)
 {
-	t_stack	*new_node;
+	t_stack_node	*new_node;
 
-	new_node = malloc(sizeof(t_stack));
+	new_node = malloc(sizeof(t_stack_node));
 	if (new_node == NULL)
 		return (NULL);
 	new_node->previous = NULL;
@@ -25,9 +25,9 @@ t_stack	*ft_lstnew(int *content)
 	return (new_node);
 }
 
-void	ft_lstadd_back(t_stack **a, t_stack *new)
+void	ft_lstadd_back(t_stack_node **a, t_stack_node *new)
 {
-	t_stack	*last;
+	t_stack_node	*last;
 
 	if (new == NULL)
 		return ;
@@ -41,7 +41,7 @@ void	ft_lstadd_back(t_stack **a, t_stack *new)
 	new->previous = last;
 }
 
-void	ft_lstadd_front(t_stack **lst, t_stack *new)
+void	ft_lstadd_front(t_stack_node **lst, t_stack_node *new)
 {
 	if (new == NULL)
 		return ;
@@ -59,7 +59,7 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 	}
 }
 
-t_stack	*ft_lstlast(t_stack *a)
+t_stack_node	*ft_lstlast(t_stack_node *a)
 {
 	if (a == NULL)
 		return (NULL);
@@ -68,10 +68,10 @@ t_stack	*ft_lstlast(t_stack *a)
 	return (a);
 }
 
-int	stacksize(t_stack *lst)
+int	stacksize(t_stack_node *lst)
 {
 	int		stack_size;
-	t_stack	*ref;
+	t_stack_node	*ref;
 
 	stack_size = 0;
 	ref = lst;

@@ -6,15 +6,15 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:38:00 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/15 17:48:34 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/29 11:46:00 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_stack(t_stack **a)
+void	ft_free_stack(t_stack_node **a)
 {
-	t_stack	*aux;
+	t_stack_node	*aux;
 
 	aux = NULL;
 	while (*a)
@@ -31,9 +31,9 @@ void	ft_exit(void)
 	exit (-1);
 }
 
-int	ft_is_ordered(t_stack **a)
+int	ft_is_ordered(t_stack_node **a)
 {
-	t_stack	*ref;
+	t_stack_node	*ref;
 
 	ref = (*a);
 	while (ref && ref->next && ref->number < ref->next->number)
@@ -48,9 +48,11 @@ int	ft_is_ordered(t_stack **a)
 	return (0);
 }
 
-void	ft_create_stack_a(t_stack **a, int *num_str, int argc)
+/* ft_create_stack_a converts from the already evaluated int string into
+a linked list, which is the initial stack a. */
+void	ft_create_stack_a(t_stack_node **a, int *num_str, int argc)
 {
-	t_stack	*new_node;
+	t_stack_node	*new_node;
 	int		*aux;
 
 	aux = num_str;
@@ -65,9 +67,9 @@ void	ft_create_stack_a(t_stack **a, int *num_str, int argc)
 
 int	main(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
-	t_stack	*aux;
+	t_stack_node	*a;
+	t_stack_node	*b;
+	t_stack_node	*aux;
 	int		*num_str;
 
 	if (argc < 2)

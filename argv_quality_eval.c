@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   argv_quality_eval.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:54:29 by igchurru          #+#    #+#             */
-/*   Updated: 2024/06/14 11:41:03 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/07/18 17:05:14 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* ft_atoi takes each char from the char string and coverts it into
+an int. Note that variable type used is long instead of int to
+avoid segfaulting. */
 long	ft_atoi(const char *str)
 {
 	long	result;
@@ -37,6 +40,9 @@ long	ft_atoi(const char *str)
 	return (result * sign);
 }
 
+/* ft_evaluate_quality checks whether there are or not any chars other than
+numbers, or a single minus sign, in the argv. Any weird input is discarded
+and the program exits. Note that a space is considered as an error.*/
 void	ft_evaluate_quality(char **argv)
 {
 	int		i;
@@ -66,6 +72,8 @@ void	ft_evaluate_quality(char **argv)
 	}
 }
 
+/* Here memory is allocated to create an int string which will fill the
+initial stack later. Also, max and min ints are checked here.*/
 int	*ft_convert_to_int(int argc, char **argv)
 {
 	int		*num_str;
@@ -79,7 +87,7 @@ int	*ft_convert_to_int(int argc, char **argv)
 	while (i < argc)
 	{
 		v = ft_atoi(argv[i]);
-		if (v < -2147483648 || 2147483647 < v)
+		if (v < MININT || MAXINT < v)
 		{
 			free(num_str);
 			ft_exit();
@@ -91,6 +99,7 @@ int	*ft_convert_to_int(int argc, char **argv)
 	return (num_str);
 }
 
+/* ft_strncmp checks for repeated numbers. */
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	unsigned char	*ucs1;
