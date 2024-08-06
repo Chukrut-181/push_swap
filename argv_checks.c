@@ -1,0 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   argv_checks.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/29 13:16:33 by igchurru          #+#    #+#             */
+/*   Updated: 2024/08/06 09:59:40 by igchurru         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+/* Check_interval checks whether number is inside the int range. 
+Returns true if outside of range. */
+
+bool	check_interval(long number)
+{
+	if (number < INT_MIN || INT_MAX < number)
+	{
+		return (true);
+	}
+	else
+		return (false);
+	
+}
+
+/* Check_syntax_error checks that argv[i] is valid, e.g. one '+' or '-'
+and only numeric characters. Returns true if any error is found. */
+bool	check_syntax_error(char *str)
+{
+	if (*str == '-' || *str == '+')
+	{
+		str++;
+	}
+	if (!*str)
+	{
+		return (true);
+	}
+	while (*str)
+	{
+		if (*str < '0' || '9' < *str)
+		{
+			return (true);
+		}
+		str++;
+	}
+	return (false);
+}
+
+/* Check_repetition checks that the new number to be added to the stack
+is not already present in it. Returns true if already present. */
+bool	check_repetition(t_stack_node *a, int nbr)
+{
+	if (!a)
+		return (false);
+	while (a)
+	{
+		if (a->number == nbr)
+			return (true);
+		a = a->next;
+	}
+	return (false);
+}
