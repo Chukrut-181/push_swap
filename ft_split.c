@@ -6,13 +6,13 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:28:23 by igchurru          #+#    #+#             */
-/*   Updated: 2024/07/29 12:58:15 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/07 10:13:46 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	**ft_freeall(char **frags, unsigned int k)
+char	**ft_freeall(char **frags, unsigned int k)
 {
 	unsigned int	i;
 
@@ -26,7 +26,7 @@ static char	**ft_freeall(char **frags, unsigned int k)
 	return (NULL);
 }
 
-static size_t	ft_wordlen(const char *word, char c)
+size_t	ft_wordlen(const char *word, char c)
 {
 	size_t	len;
 
@@ -36,7 +36,7 @@ static size_t	ft_wordlen(const char *word, char c)
 	return (len);
 }
 
-static char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 
@@ -51,7 +51,7 @@ static char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr);
 }
 
-static unsigned int	ft_count_frags(const char *s, char c)
+unsigned int	ft_count_frags(const char *s, char c)
 {
 	unsigned int	count;
 
