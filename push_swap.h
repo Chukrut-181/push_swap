@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/06 10:33:59 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/07 10:28:22 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdbool.h>
 # include <limits.h>
+# include <stdlib.h>
+# include <stdio.h>
 
 /*	T_STACK_NODE STRUCTURE 
 
@@ -45,27 +47,32 @@ typedef struct s_list
 }	t_stack_node;
 
 //	MAIN.C
-int					main(int argc, char **argv);
-void				error_free(t_stack_node **a, char **argv, bool argc_is_2);
-void				free_stack(t_stack_node **stack);
-void				free_argv(char **argv);
+int				main(int argc, char **argv);
+void			error_free(t_stack_node **a, char **argv, bool argc_is_2);
+void			free_stack(t_stack_node **stack);
+void			free_argv(char **argv);
 
 //	FT_SPLIT.C
-char				**ft_split(char const *s, char c);
-static unsigned int	ft_count_frags(const char *s, char c);
-static char			*ft_substr(char const *s, unsigned int start, size_t len);
-static size_t		ft_wordlen(const char *word, char c);
-static char			**ft_freeall(char **frags, unsigned int k);
+char			**ft_split(char const *s, char c);
+unsigned int	ft_count_frags(const char *s, char c);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+size_t			ft_wordlen(const char *word, char c);
+char			**ft_freeall(char **frags, unsigned int k);
+
+//	FT_SPLIT_UTILS.C
+size_t			ft_strlen(const char *s);
+char			*ft_strdup(const char *s1);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 //	INITIAL_STACK_CREATION.C
-void				create_stack(t_stack_node **a, char **argv, bool argc_is_2);
-long				ft_atol(const char *str);
-void				add_node(t_stack_node **stack, int number);
-t_stack_node		*find_last_node(t_stack_node *node);
+void			create_stack(t_stack_node **a, char **argv, bool argc_is_2);
+long			ft_atol(const char *str);
+void			add_node(t_stack_node **stack, int number);
+t_stack_node	*find_last_node(t_stack_node *node);
 
 //	ARGV_CHECKS.C
-bool				check_syntax_error(char *str);
-bool				check_interval(long number);
-bool				check_repetition(t_stack_node *a, int nbr);
+bool			check_syntax_error(char *str);
+bool			check_interval(long number);
+bool			check_repetition(t_stack_node *a, int nbr);
 
 #endif
