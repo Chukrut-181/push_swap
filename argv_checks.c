@@ -6,11 +6,23 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:16:33 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/06 09:59:40 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 08:13:32 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+char	**prepare_argv(char *argv)
+{
+	char	*aux;
+	char	**prepared;
+
+	aux = ft_strjoin("./push_swap ", argv);
+	prepared = ft_split(aux, ' ');
+	free(aux);
+	aux = NULL;
+	return (prepared);
+}
 
 /* Check_interval checks whether number is inside the int range. 
 Returns true if outside of range. */

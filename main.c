@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 12:42:09 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/07 11:12:44 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 08:14:06 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	main(int argc, char **argv)
 	}
 	else if (argc == 2)
 	{
-		argv = ft_split(argv[1], ' ');
+		argv = prepare_argv(argv[1]);
 	}
 	create_stack(&a, argv, argc == 2);
 	while (a || b)

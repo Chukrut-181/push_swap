@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/07 10:28:22 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 08:16:06 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,14 @@ char			**ft_freeall(char **frags, unsigned int k);
 size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s1);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char			*ft_strjoin(char const *s1, char const *s2);
 
 //	INITIAL_STACK_CREATION.C
 void			create_stack(t_stack_node **a, char **argv, bool argc_is_2);
 long			ft_atol(const char *str);
 void			add_node(t_stack_node **stack, int number);
 t_stack_node	*find_last_node(t_stack_node *node);
+char			**prepare_argv(char *argv);
 
 //	ARGV_CHECKS.C
 bool			check_syntax_error(char *str);
