@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 09:46:10 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 09:57:14 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,10 @@ void			swap(t_stack_node **stack);
 void			sa(t_stack_node	**a);
 void			sb(t_stack_node	**b);
 void			ss(t_stack_node	**a, t_stack_node	**b);
+
+//	PUSH_COMMAND.C
+void			push(t_stack_node **dest, t_stack_node **src);
+void			pa(t_stack_node **a, t_stack_node **b);
+void			pb(t_stack_node **b, t_stack_node **a);
 
 #endif
