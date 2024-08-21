@@ -6,15 +6,27 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:16:33 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/06 09:59:40 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 10:16:39 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Here the argv is prepared and split in the special case argv == 2.  */
+char	**prepare_argv(char *argv)
+{
+	char	*aux;
+	char	**prepared;
+
+	aux = ft_strjoin("./push_swap ", argv);
+	prepared = ft_split(aux, ' ');
+	free(aux);
+	aux = NULL;
+	return (prepared);
+}
+
 /* Check_interval checks whether number is inside the int range. 
 Returns true if outside of range. */
-
 bool	check_interval(long number)
 {
 	if (number < INT_MIN || INT_MAX < number)
@@ -23,7 +35,6 @@ bool	check_interval(long number)
 	}
 	else
 		return (false);
-	
 }
 
 /* Check_syntax_error checks that argv[i] is valid, e.g. one '+' or '-'

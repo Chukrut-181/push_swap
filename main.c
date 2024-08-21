@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 12:42:09 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/07 12:00:11 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 08:27:34 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
-	t_stack_node	*aux;
 
 	a = NULL;
 	b = NULL;
@@ -68,7 +67,7 @@ int	main(int argc, char **argv)
 	}
 	else if (argc == 2)
 	{
-		argv = ft_split(argv[1], ' ');
+		argv = prepare_argv(argv[1]);
 	}
 	create_stack(&a, argv, argc == 2);
 	while (a || b)
@@ -76,19 +75,16 @@ int	main(int argc, char **argv)
 		if (a)
 		{
 			printf("%i   ", a->number);
-			aux = a;
 			a = a->next;
-			free (aux);
 		}
 		if (b)
 		{
 			printf("%i", b->number);
-			aux = b;
 			b = b->next;
-			free (aux);
 		}
 		printf("\n");
 	}
 	printf("%c   %c\n", '_', '_');
 	printf("%c   %c\n", 'A', 'B');
+	free_stack(&a);
 }

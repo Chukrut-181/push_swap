@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/07 10:28:22 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 10:30:06 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 /*	T_STACK_NODE STRUCTURE 
 
-The data structure that will form the stack to be sorted.
-Contains all necessary metadata to evaluate the optimal move
-and sort the initial stack.
+This is thee data structure that will form the stack to be sorted.
+Contains all necessary metadata to evaluate the optimal move and sort
+the initial stack following the "game rules".
 
 *previous		Link to previous node in stack.
 number 			Number to be sorted.
@@ -63,16 +63,44 @@ char			**ft_freeall(char **frags, unsigned int k);
 size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s1);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char			*ft_strjoin(char const *s1, char const *s2);
 
 //	INITIAL_STACK_CREATION.C
 void			create_stack(t_stack_node **a, char **argv, bool argc_is_2);
 long			ft_atol(const char *str);
 void			add_node(t_stack_node **stack, int number);
 t_stack_node	*find_last_node(t_stack_node *node);
+char			**prepare_argv(char *argv);
 
 //	ARGV_CHECKS.C
 bool			check_syntax_error(char *str);
 bool			check_interval(long number);
 bool			check_repetition(t_stack_node *a, int nbr);
+
+//	STACK_UTILS.C
+int				stack_size(t_stack_node *node);
+
+//	SWAP_COMMAND.C
+void			swap(t_stack_node **stack);
+void			sa(t_stack_node	**a);
+void			sb(t_stack_node	**b);
+void			ss(t_stack_node	**a, t_stack_node	**b);
+
+//	PUSH_COMMAND.C
+void			push(t_stack_node **dest, t_stack_node **src);
+void			pa(t_stack_node **a, t_stack_node **b);
+void			pb(t_stack_node **b, t_stack_node **a);
+
+//	ROTATE_COMMAND.C
+void			rotate(t_stack_node **stack);
+void			ra(t_stack_node **a);
+void			rb(t_stack_node **b);
+void			rr(t_stack_node **a, t_stack_node **b);
+
+//	REVERSE_ROTATE_COMMAND.C
+void			reverse_rotate(t_stack_node **stack);
+void			rra(t_stack_node **a);
+void			rrb(t_stack_node **b);
+void			rrr(t_stack_node **a, t_stack_node **b);
 
 #endif

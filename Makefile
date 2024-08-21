@@ -2,7 +2,8 @@ NAME = push_swap
 
 PS_LIB_NAME = push_swap.a
 
-PS_LIB_SOURCES = argv_checks.c ft_split.c ft_split_utils.c initial_stack_creation.c
+PS_LIB_SOURCES = argv_checks.c ft_split.c ft_split_utils.c initial_stack_creation.c \
+swap_command.c push_command.c rotate_command.c reverse_rotate_command.c stack_utils.c
 
 MAIN = main.c
 
