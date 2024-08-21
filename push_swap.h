@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 10:05:10 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 10:12:06 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,11 @@ void			rotate(t_stack_node **stack);
 void			ra(t_stack_node **a);
 void			rb(t_stack_node **b);
 void			rr(t_stack_node **a, t_stack_node **b);
+
+//	REVERSE_ROTATE_COMMAND.C
+void			reverse_rotate(t_stack_node **stack);
+void			rra(t_stack_node **a);
+void			rrb(t_stack_node **b);
+void			rrr(t_stack_node **a, t_stack_node **b);
 
 #endif
