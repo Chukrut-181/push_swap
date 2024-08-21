@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 09:31:13 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 09:46:56 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 10:17:50 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	sa(t_stack_node	**a)
 }
 
 /* Executes the SB command and writes "sb". */
-
 void	sb(t_stack_node	**b)
 {
 	swap(b);
@@ -47,7 +46,6 @@ void	sb(t_stack_node	**b)
 }
 
 /* Executes the SA and SB commands and writes "sa". */
-
 void	ss(t_stack_node	**a, t_stack_node	**b)
 {
 	swap(a);

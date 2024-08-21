@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 09:59:09 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 10:05:53 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 10:18:01 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	rotate(t_stack_node **stack)
 }
 
 /* Executes the RA command and writes "ra". */
-
 void	ra(t_stack_node **a)
 {
 	rotate(a);
@@ -39,7 +38,6 @@ void	ra(t_stack_node **a)
 }
 
 /* Executes the RB command and writes "rb". */
-
 void	rb(t_stack_node **b)
 {
 	rotate(b);
@@ -47,7 +45,6 @@ void	rb(t_stack_node **b)
 }
 
 /* Executes the RR command and writes "rr". */
-
 void	rr(t_stack_node **a, t_stack_node **b)
 {
 	rotate(a);

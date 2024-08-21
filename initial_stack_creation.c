@@ -6,13 +6,13 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:08:56 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/06 10:35:45 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 10:16:07 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Does as it's name indicates. Returns a poiter to the last node in the stack (list). */
+/* Finds the last node in a stack and returns a pointer to it. */
 t_stack_node	*find_last_node(t_stack_node *node)
 {
 	if (!node)
@@ -27,7 +27,6 @@ First it allocates memory, then sets node->number, and then sets both node
 pointers as corresponds. */
 void	add_node(t_stack_node **stack, int number)
 {
-
 	t_stack_node	*new_node;
 	t_stack_node	*last_node;
 
