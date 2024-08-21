@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 08:16:06 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 09:46:10 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,14 @@ char			**prepare_argv(char *argv);
 bool			check_syntax_error(char *str);
 bool			check_interval(long number);
 bool			check_repetition(t_stack_node *a, int nbr);
+
+//	STACK_UTILS.C
+int				stack_size(t_stack_node *node);
+
+//	SWAP_COMMAND.C
+void			swap(t_stack_node **stack);
+void			sa(t_stack_node	**a);
+void			sb(t_stack_node	**b);
+void			ss(t_stack_node	**a, t_stack_node	**b);
 
 #endif

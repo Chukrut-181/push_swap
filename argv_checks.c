@@ -6,12 +6,13 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:16:33 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 08:13:32 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/21 08:30:42 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Here the argv is prepared and split in the special case argv == 2.  */
 char	**prepare_argv(char *argv)
 {
 	char	*aux;
