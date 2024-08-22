@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 12:42:09 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/22 08:42:56 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/22 12:25:38 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int	main(int argc, char **argv)
 			sa(&a);
 		else if (stack_size(a) == 3)
 			solve_for_three(&a);
+		else
+			push_swap(&a, &b);
 	}
 	while (a || b)
 	{

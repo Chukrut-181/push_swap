@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 09:44:11 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/22 08:52:15 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:03:54 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,27 @@ t_stack_node	*find_highest(t_stack_node *node)
 		node = node->next;
 	}
 	return (highest_node);
+}
+
+/* Finds and returns a pointer to the node with the lowest number
+(node->number) in a stack. */
+t_stack_node	*find_lowest(t_stack_node *node)
+{
+	int				lowest;
+	t_stack_node	*lowest_node;
+
+	if (!node)
+		return (NULL);
+	lowest = INT_MAX;
+	lowest_node = NULL;
+	while (node)
+	{
+		if (node->number < lowest)
+		{
+			lowest = node->number;
+			lowest_node = node;
+		}
+		node = node->next;
+	}
+	return (lowest_node);
 }
