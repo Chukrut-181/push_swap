@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:16:33 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 10:16:39 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/22 08:54:34 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**prepare_argv(char *argv)
 
 /* Check_interval checks whether number is inside the int range. 
 Returns true if outside of range. */
-bool	check_interval(long number)
+bool	check_interval_error(long number)
 {
 	if (number < INT_MIN || INT_MAX < number)
 	{
@@ -62,7 +62,7 @@ bool	check_syntax_error(char *str)
 
 /* Check_repetition checks that the new number to be added to the stack
 is not already present in it. Returns true if already present. */
-bool	check_repetition(t_stack_node *a, int nbr)
+bool	check_repetition_error(t_stack_node *a, int nbr)
 {
 	if (!a)
 		return (false);
