@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:54:36 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/22 12:21:58 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/22 12:31:42 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ void	calculate_price(t_stack_node *a, t_stack_node *b)
 	int	size_a;
 	int	size_b;
 
-	if (!b || !a)
-		return ;
 	size_a = stack_size(a);
 	size_b = stack_size(b);
 	while (b)
@@ -47,7 +45,8 @@ void	calculate_price(t_stack_node *a, t_stack_node *b)
 		if (both_above_middle(b) && b->above_middle == true)
 			b->cost_to_push = find_higher(b->index, b->target_node->index);
 		else if (both_above_middle(b) && b->above_middle == false)
-			b->cost_to_push = find_higher(size_b - b->index, size_a - b->target_node->index);
+			b->cost_to_push = find_higher(size_b - b->index,
+					size_a - b->target_node->index);
 		else
 		{
 			b->cost_to_push = b->index;

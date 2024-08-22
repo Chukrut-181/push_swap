@@ -6,13 +6,14 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:45:26 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/22 12:18:47 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/22 12:29:36 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	twin_rotations(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_node)
+void	twin_rotations(t_stack_node **a, t_stack_node **b,
+t_stack_node *cheapest_node)
 {
 	if (!a || !*a || !b || !*b || !cheapest_node)
 		return ;
@@ -22,8 +23,8 @@ void	twin_rotations(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_n
 	assign_index(*b);
 }
 
-
-void	twin_reverse_rotations(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_node)
+void	twin_reverse_rotations(t_stack_node **a, t_stack_node **b,
+t_stack_node *cheapest_node)
 {
 	if (!a || !*a || !b || !*b || !cheapest_node)
 		return ;
@@ -33,7 +34,8 @@ void	twin_reverse_rotations(t_stack_node **a, t_stack_node **b, t_stack_node *ch
 	assign_index(*b);
 }
 
-void	single_rotation(t_stack_node **stack, t_stack_node *top_node, char name)
+void	single_rotation(t_stack_node **stack, t_stack_node *top_node,
+char name)
 {
 	if (!stack || !*stack || !top_node)
 		return ;
