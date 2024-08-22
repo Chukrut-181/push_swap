@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 12:42:09 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 08:27:34 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/22 08:42:56 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,13 @@ int	main(int argc, char **argv)
 		argv = prepare_argv(argv[1]);
 	}
 	create_stack(&a, argv, argc == 2);
+	if (!is_sorted(a))
+	{
+		if (stack_size(a) == 2)
+			sa(&a);
+		else if (stack_size(a) == 3)
+			solve_for_three(&a);
+	}
 	while (a || b)
 	{
 		if (a)

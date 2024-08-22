@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 10:12:06 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/22 08:38:10 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 /*	T_STACK_NODE STRUCTURE 
 
-The data structure that will form the stack to be sorted.
-Contains all necessary metadata to evaluate the optimal move
-and sort the initial stack.
+This is thee data structure that will form the stack to be sorted.
+Contains all necessary metadata to evaluate the optimal move and sort
+the initial stack following the "game rules".
 
 *previous		Link to previous node in stack.
 number 			Number to be sorted.
@@ -79,6 +79,9 @@ bool			check_repetition(t_stack_node *a, int nbr);
 
 //	STACK_UTILS.C
 int				stack_size(t_stack_node *node);
+bool			is_sorted(t_stack_node *node);
+void			solve_for_three(t_stack_node **a);
+t_stack_node	*find_highest(t_stack_node *node);
 
 //	SWAP_COMMAND.C
 void			swap(t_stack_node **stack);
