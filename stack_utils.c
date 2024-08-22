@@ -6,12 +6,13 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 09:44:11 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/22 08:41:06 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/22 08:52:15 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Counts the number of nodes in a stack. Returns the count.*/
 int	stack_size(t_stack_node *node)
 {
 	int	size;
@@ -27,6 +28,8 @@ int	stack_size(t_stack_node *node)
 	return (size);
 }
 
+/* Checks if a stack is already sorted. Checks that each node->number 
+is lower than node->next->number. Returns true if sorted.*/
 bool	is_sorted(t_stack_node *node)
 {
 	if (!node)
@@ -39,6 +42,9 @@ bool	is_sorted(t_stack_node *node)
 	}
 	return (true);
 }
+
+/* Solves the simple case when a three node stack has to be sorted.
+This can be usually done in one move, or two at most. */
 void	solve_for_three(t_stack_node **a)
 {
 	t_stack_node	*highest_node;
@@ -53,6 +59,9 @@ void	solve_for_three(t_stack_node **a)
 	if ((*a)->number > (*a)->next->number)
 		sa(a);
 }
+
+/* Finds and returns a pointer to the node with the highest number
+(node->number) in a stack. */
 t_stack_node	*find_highest(t_stack_node *node)
 {
 	int				highest;
