@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:08:56 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 10:16:07 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/22 12:47:20 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,9 @@ void	create_stack(t_stack_node **a, char **argv, bool argc_is_2)
 		if (check_syntax_error(argv[i]))
 			error_free(a, argv, argc_is_2);
 		number = ft_atol(argv[i]);
-		if (check_interval(number))
+		if (check_interval_error(number))
 			error_free(a, argv, argc_is_2);
-		if (check_repetition(*a, (int)number))
+		if (check_repetition_error(*a, (int)number))
 			error_free(a, argv, argc_is_2);
 		add_node(a, (int)number);
 		i++;

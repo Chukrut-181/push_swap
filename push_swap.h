@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 10:30:06 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/22 12:21:37 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ typedef struct s_list
 {
 	struct s_list	*previous;
 	int				number;
-	int				curr_index;
+	int				index;
 	int				cost_to_push;
 	bool			is_cheapest;
-	bool			above_median;
+	bool			above_middle;
 	struct s_list	*target_node;
 	struct s_list	*next;
 }	t_stack_node;
@@ -74,11 +74,15 @@ char			**prepare_argv(char *argv);
 
 //	ARGV_CHECKS.C
 bool			check_syntax_error(char *str);
-bool			check_interval(long number);
-bool			check_repetition(t_stack_node *a, int nbr);
+bool			check_interval_error(long number);
+bool			check_repetition_error(t_stack_node *a, int nbr);
 
 //	STACK_UTILS.C
 int				stack_size(t_stack_node *node);
+bool			is_sorted(t_stack_node *node);
+void			solve_for_three(t_stack_node **a);
+t_stack_node	*find_highest(t_stack_node *node);
+t_stack_node	*find_lowest(t_stack_node *node);
 
 //	SWAP_COMMAND.C
 void			swap(t_stack_node **stack);
@@ -102,5 +106,20 @@ void			reverse_rotate(t_stack_node **stack);
 void			rra(t_stack_node **a);
 void			rrb(t_stack_node **b);
 void			rrr(t_stack_node **a, t_stack_node **b);
+
+//	NODE_EVALUATIONS.C
+void			calculate_price(t_stack_node *a, t_stack_node *b);
+void			find_target_node(t_stack_node *a, t_stack_node *b);
+void			assign_index(t_stack_node *node);
+void			evaluate_nodes(t_stack_node *a, t_stack_node *b);
+void			flag_cheapest(t_stack_node *b);
+
+//	PUSH_SWAP_ALGORYTHM.C
+void			push_swap(t_stack_node **a, t_stack_node **b);
+
+//	PUSH_SWAP_UTILS.C
+bool			both_above_middle(t_stack_node *b);
+t_stack_node	*find_cheapest(t_stack_node *node);
+int				find_higher(int n, int m);
 
 #endif

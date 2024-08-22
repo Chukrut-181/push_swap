@@ -1,0 +1,105 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_algorythm.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/22 10:45:26 by igchurru          #+#    #+#             */
+/*   Updated: 2024/08/22 12:29:36 by igchurru         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	twin_rotations(t_stack_node **a, t_stack_node **b,
+t_stack_node *cheapest_node)
+{
+	if (!a || !*a || !b || !*b || !cheapest_node)
+		return ;
+	while (*a != cheapest_node->target_node && *b != cheapest_node)
+		rr(a, b);
+	assign_index(*a);
+	assign_index(*b);
+}
+
+void	twin_reverse_rotations(t_stack_node **a, t_stack_node **b,
+t_stack_node *cheapest_node)
+{
+	if (!a || !*a || !b || !*b || !cheapest_node)
+		return ;
+	while (*a != cheapest_node->target_node && *b != cheapest_node)
+		rrr(a, b);
+	assign_index(*a);
+	assign_index(*b);
+}
+
+void	single_rotation(t_stack_node **stack, t_stack_node *top_node,
+char name)
+{
+	if (!stack || !*stack || !top_node)
+		return ;
+	while (*stack != top_node)
+	{
+		if (name == 'a')
+		{
+			if (top_node->above_middle)
+				ra(stack);
+			else
+				rra(stack);
+		}
+		else
+		{
+			if (top_node->above_middle)
+				rb(stack);
+			else
+				rrb(stack);
+		}
+	}
+}
+
+void	push_optimal(t_stack_node **a, t_stack_node **b)
+{
+	t_stack_node	*cheapest_node;
+
+	if (!a || !*a || !b || !*b)
+		return ;
+	cheapest_node = find_cheapest(*b);
+	if (cheapest_node->above_middle && cheapest_node->target_node->above_middle)
+		twin_rotations(a, b, cheapest_node);
+	else if (!(cheapest_node->above_middle)
+		&& !(cheapest_node->target_node->above_middle))
+		twin_reverse_rotations(a, b, cheapest_node);
+	single_rotation(b, cheapest_node, 'b');
+	single_rotation(a, cheapest_node->target_node, 'a');
+	pa(a, b);
+}
+
+void	push_swap(t_stack_node **a, t_stack_node **b)
+{
+	t_stack_node	*lowest_node;
+	int				size;
+
+	if (!a || !*a)
+		return ;
+	size = stack_size(*a);
+	while (size > 3)
+	{
+		pb(b, a);
+		size--;
+	}
+	solve_for_three(a);
+	while (*b)
+	{
+		evaluate_nodes(*a, *b);
+		push_optimal(a, b);
+	}
+	assign_index(*a);
+	lowest_node = find_lowest(*a);
+	if (lowest_node->above_middle == true)
+		while (*a != lowest_node)
+			ra(a);
+	else
+		while (*a != lowest_node)
+			rra(a);
+}
