@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 12:42:09 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/23 08:15:14 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/23 10:20:59 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,3 +83,10 @@ int	main(int argc, char **argv)
 	}
 	free_stack(&a);
 }
+/* ARG="[ARGUMENTS]"; ./push_swap $ARG | tee >(wc -l) | ./checker_linux $ARG
+
+ARG="[ARGUMENTS]" stores a given list of arguments in the variable ARG.
+./push_swap $ARG executes push_swap taking the list as input.
+tee >(wc -l) displays the output from push_swap as usual, then counts lines.
+./checker_linux $ARG runs the checker program taking the ARG and the
+output from push_swap and displays OK if the list gets sorted as required.*/
