@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:28:23 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/07 10:13:46 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/23 08:03:47 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,18 +99,3 @@ char	**ft_split(char const *s, char c)
 	frags[k] = NULL;
 	return (frags);
 }
-
-/* int	main(int argc, char **argv)
-{
-	char	**test;
-	
-	(void)argc;
-	test = ft_split((char const *)argv[1], *argv[2]);
-	while (test != NULL && *test != NULL)
-	{
-		printf ("%s\n", *test);
-		test++;
-	}
-	return (0);
-}
- */

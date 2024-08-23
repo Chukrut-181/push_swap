@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/22 12:21:37 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/23 08:32:01 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void			flag_cheapest(t_stack_node *b);
 void			push_swap(t_stack_node **a, t_stack_node **b);
 
 //	PUSH_SWAP_UTILS.C
-bool			both_above_middle(t_stack_node *b);
+bool			both_in_same_half(t_stack_node *b);
 t_stack_node	*find_cheapest(t_stack_node *node);
 int				find_higher(int n, int m);
 

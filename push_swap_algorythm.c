@@ -6,12 +6,13 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:45:26 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/22 12:29:36 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/23 09:16:38 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/* Rotates both stacks untill either the cheapest node or it's target
+are on top of their stack. */
 void	twin_rotations(t_stack_node **a, t_stack_node **b,
 t_stack_node *cheapest_node)
 {
@@ -23,6 +24,8 @@ t_stack_node *cheapest_node)
 	assign_index(*b);
 }
 
+/* Reverse rotates both stacks untill either the cheapest node or it's target
+are on top of their stack. */
 void	twin_reverse_rotations(t_stack_node **a, t_stack_node **b,
 t_stack_node *cheapest_node)
 {
@@ -34,6 +37,8 @@ t_stack_node *cheapest_node)
 	assign_index(*b);
 }
 
+/* Rotates or reverse rotates one stacks untill the top_node is on top.
+"top_node" is either the cheapest node or it's target node. */
 void	single_rotation(t_stack_node **stack, t_stack_node *top_node,
 char name)
 {
@@ -58,6 +63,8 @@ char name)
 	}
 }
 
+/* Executes the correct rotations to place the node to be pushed and it's
+target node on top of both stacks and then pushes it. */
 void	push_optimal(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*cheapest_node;
@@ -75,6 +82,14 @@ void	push_optimal(t_stack_node **a, t_stack_node **b)
 	pa(a, b);
 }
 
+/* This is "the sorting engine". It works by pushing from a to b until only
+three elements remain in stack a. First it solves a, then determines the
+optimal push from b to a, and pushes the element to it's correct position.
+ 1.- Push to b until only three elemens remain in a.
+ 2.- Sort a as a three element case.
+ 3.- Determine optimal push from b to a.
+ 4.- Make the push.
+ 5.- Rinse and repeat 3 & 4.*/
 void	push_swap(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*lowest_node;

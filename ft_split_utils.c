@@ -6,12 +6,13 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 10:06:15 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/21 08:15:37 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/23 09:15:43 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Classic strlen, measures the length of any given char string. */
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
@@ -22,6 +23,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
+/* Duplicates, with memory allocation, a char string. */
 char	*ft_strdup(const char *s1)
 {
 	char	*c;
