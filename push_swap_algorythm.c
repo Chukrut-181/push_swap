@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:45:26 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/23 09:09:53 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/23 09:16:38 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,10 @@ void	push_optimal(t_stack_node **a, t_stack_node **b)
 	single_rotation(a, cheapest_node->target_node, 'a');
 	pa(a, b);
 }
- /* This is "the sorting engine". It works by pushing from a to b until only three
- elements remain in stack a. First it solves a, then determines the optimal push
- from b to a, and pushes the element to it's correct position.
+
+/* This is "the sorting engine". It works by pushing from a to b until only
+three elements remain in stack a. First it solves a, then determines the
+optimal push from b to a, and pushes the element to it's correct position.
  1.- Push to b until only three elemens remain in a.
  2.- Sort a as a three element case.
  3.- Determine optimal push from b to a.
