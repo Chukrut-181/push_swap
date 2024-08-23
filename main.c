@@ -6,12 +6,13 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 12:42:09 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/22 12:25:38 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/08/23 08:15:14 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* Function to free allocated memory from a char string. */
 void	free_argv(char **argv)
 {
 	int	i;
@@ -28,6 +29,7 @@ void	free_argv(char **argv)
 	argv = NULL;
 }
 
+/* Function to free allocated memory from a linked list aka stack. */
 void	free_stack(t_stack_node **stack)
 {
 	t_stack_node	*temp;
@@ -45,6 +47,8 @@ void	free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
+/* Function to manage stack and/or string memory liberation as well as
+displaying the required "Error" message. */
 void	error_free(t_stack_node **a, char **argv, bool argc_is_2)
 {
 	free_stack(a);
@@ -62,14 +66,12 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if ((argc < 2) || (argc == 2 && !argv[1][0]))
-	{
 		return (1);
-	}
 	else if (argc == 2)
-	{
 		argv = prepare_argv(argv[1]);
-	}
 	create_stack(&a, argv, argc == 2);
+	if (argc == 2)
+		free_argv(argv);
 	if (!is_sorted(a))
 	{
 		if (stack_size(a) == 2)
@@ -79,21 +81,5 @@ int	main(int argc, char **argv)
 		else
 			push_swap(&a, &b);
 	}
-	while (a || b)
-	{
-		if (a)
-		{
-			printf("%i   ", a->number);
-			a = a->next;
-		}
-		if (b)
-		{
-			printf("%i", b->number);
-			b = b->next;
-		}
-		printf("\n");
-	}
-	printf("%c   %c\n", '_', '_');
-	printf("%c   %c\n", 'A', 'B');
 	free_stack(&a);
 }
