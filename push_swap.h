@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/09/09 09:44:48 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/09/09 10:57:04 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 /*	T_STACK_NODE STRUCTURE 
 
