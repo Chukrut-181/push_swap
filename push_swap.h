@@ -6,7 +6,7 @@
 /*   By: igchurru <igchurru@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 10:29:41 by igchurru          #+#    #+#             */
-/*   Updated: 2024/08/23 08:32:01 by igchurru         ###   ########.fr       */
+/*   Updated: 2024/09/09 10:57:04 by igchurru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 /*	T_STACK_NODE STRUCTURE 
 
-This is thee data structure that will form the stack to be sorted.
+This is the data structure that will form the stack to be sorted.
 Contains all necessary metadata to evaluate the optimal move and sort
 the initial stack following the "game rules".
 
